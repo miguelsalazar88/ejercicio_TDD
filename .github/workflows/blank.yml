@@ -44,3 +44,9 @@ jobs:
           aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
           aws-region: us-east-1
+      - name: Upload to Bucket
+        run: |
+          aws s3 cp funcion.py s3://bucket-ejercicio-tdd/
+          aws s3 cp test_funcion.py s3://bucket-ejercicio-tdd/
+          
+      
